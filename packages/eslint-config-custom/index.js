@@ -1,6 +1,7 @@
 module.exports = {
-  extends: ["next", "turbo", "prettier"],
+  root: true,
+  extends: ['next', 'turbo', 'plugin:import/recommended', 'prettier'],
   rules: {
-    "@next/next/no-html-link-for-pages": "off",
+    '@next/next/no-html-link-for-pages': 'off',
   },
 };
