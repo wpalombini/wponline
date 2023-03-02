@@ -1,10 +1,10 @@
-import { Button } from "ui";
+import { AppShell, Button } from 'ui';
 
 export default function Docs() {
   return (
-    <div>
+    <AppShell>
       <h1>Docs</h1>
       <Button />
-    </div>
+    </AppShell>
   );
 }
