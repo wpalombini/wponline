@@ -26,12 +26,16 @@ jobs:
           npm install -g pnpm
           pnpm install
           pnpm build
+      
+      - name: Zip all files for upload between jobs
+          # IMPORTANT: .next is a hidden folder and will NOT be included in the zip unless we specify it
+          run: zip next.zip .apps/web/* .next -qr
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: node-app
-          path: ./apps/web
+          path: next.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -53,4 +57,7 @@ jobs:
           app-name: 'wponline-appservice'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0243B3679B9947689765CFE3B1AF27BF }}
-          package: .
+          package: next.zip
+      
+      - name: Delete zip file
+          run: rm next.zip
