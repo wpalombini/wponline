@@ -27,7 +27,8 @@ jobs:
           pnpm install
           pnpm build
 
-      - name: Zip all files for upload between jobs
+      - name:
+          Zip all files for upload between jobs
           # IMPORTANT: .next is a hidden folder and will NOT be included in the zip unless we specify it
         run: zip next.zip .apps/web/* .next -qr
 
@@ -58,6 +59,6 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0243B3679B9947689765CFE3B1AF27BF }}
           package: next.zip
-      
+
       - name: Delete zip file
-          run: rm next.zip
+        run: rm next.zip
