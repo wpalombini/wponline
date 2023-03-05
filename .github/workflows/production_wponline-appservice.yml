@@ -25,7 +25,7 @@ jobs:
         run: |
           npm install -g pnpm
           pnpm install
-          pnpm run build --if-present
+          pnpm build
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
