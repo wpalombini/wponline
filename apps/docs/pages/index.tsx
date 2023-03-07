@@ -1,4 +1,4 @@
-import { AppShell, Button } from 'ui';
+import { AppShell, Button } from "ui";
 
 export default function Docs() {
   return (
