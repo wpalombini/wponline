@@ -7,4 +7,5 @@ module.exports = {
   experimental: {
     outputFileTracingRoot: path.join(__dirname, '../../'),
   },
+  basePath: '/docs',
 };
