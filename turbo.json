@@ -6,7 +6,7 @@
       "cache": false,
       "dependsOn": ["^build"],
       "outputs": ["dist/**", ".next/**"],
-      "env": ["NEXT_PUBLIC_TEST", "NODE_ENV"]
+      "env": ["NEXT_PUBLIC_MY_VAR", "NODE_ENV", "MY_VAR", "BASE_URL"]
     },
     "lint": {
       "cache": false,
